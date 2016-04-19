@@ -114,4 +114,12 @@
             <parameter name="cartId" force="true">%cart_id%</parameter>
         </data>
     </route>
+    
+    <!-- Expose Cart Config Information -->
+    <route url="/V1/carts/mine/shipping-information" method="GET">
+        <service class="Magento\Checkout\Model\ConfigProviderInterface" method="getConfig"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
 </routes>
